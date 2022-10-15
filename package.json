@@ -4,7 +4,7 @@
   "description": "Welcome to Pesto assignments.",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"**/*.{css,json,scss,html,js,ts,jsx,tsx}\"",
+    "format": "prettier --write \"**/*.{css,json,scss,html,js,ts,jsx,tsx,md}\"",
     "prepare": "husky install"
   },
   "repository": {
