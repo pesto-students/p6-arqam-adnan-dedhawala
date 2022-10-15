@@ -1,0 +1,26 @@
+{
+  "name": "adnan-dedhawala",
+  "version": "1.0.0",
+  "description": "Welcome to Pesto assignments.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"**/*.{css,json,scss,html,js,ts,jsx,tsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pesto-students/p6-arqam-adnan-dedhawala.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pesto-students/p6-arqam-adnan-dedhawala/issues"
+  },
+  "homepage": "https://github.com/pesto-students/p6-arqam-adnan-dedhawala#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1"
+  }
+}
