@@ -1,5 +1,5 @@
-const hasDuplicate = (arr)=>{
-    return new Set(arr).size !== arr.length
-}
+const hasDuplicate = arr => {
+  return new Set(arr).size !== arr.length;
+};
 
-console.log(hasDuplicate([1,2,3,4,5,1]))
+console.log(hasDuplicate([1, 2, 3, 4, 5, 1]));
