@@ -30,7 +30,7 @@ describe("Test Cases for Subraction", () => {
   });
 
   it("extra parameters", () => {
-    expect(calculator.diff(20,10,5)).toBe(5);
+    expect(calculator.diff(20, 10, 5)).toBe(5);
   });
 
   it("invalid input", () => {
@@ -38,22 +38,21 @@ describe("Test Cases for Subraction", () => {
   });
 });
 
-
 describe("Test Cases for Multiplication", () => {
-    it("Multiply 2 numbers pass case", () => {
-      expect(calculator.product(1, 2)).toBe(2);
-      expect(calculator.product(1.2,1.1)).toBeCloseTo(1.32);
-    });
-  
-    it("Multiply 2 numbers fail case", () => {
-      expect(calculator.product(1, 4)).not.toBe(3);
-    });
-  
-    it("extra parameters", () => {
-      expect(calculator.product(20,10,5)).toBe(1000);
-    });
-  
-    it("invalid input", () => {
-      expect(calculator.product(1, "poll", 3, 4)).toBe("invalid input");
-    });
+  it("Multiply 2 numbers pass case", () => {
+    expect(calculator.product(1, 2)).toBe(2);
+    expect(calculator.product(1.2, 1.1)).toBeCloseTo(1.32);
   });
+
+  it("Multiply 2 numbers fail case", () => {
+    expect(calculator.product(1, 4)).not.toBe(3);
+  });
+
+  it("extra parameters", () => {
+    expect(calculator.product(20, 10, 5)).toBe(1000);
+  });
+
+  it("invalid input", () => {
+    expect(calculator.product(1, "poll", 3, 4)).toBe("invalid input");
+  });
+});
