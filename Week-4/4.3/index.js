@@ -15,15 +15,15 @@ const fibo = {
       this.fiboSecond = nextFiboNumber;
     }
 
-    return {
-      value:
-        this.count === 1
-          ? this.fiboFirst
-          : this.count === 2
-          ? this.fiboSecond
-          : nextFiboNumber,
-      done: !(this.max >= this.count)
-    };
+    switch (this.count) {
+      case 1:
+        return { value: this.fiboFirst, done: !(this.max >= this.count) };
+      case 2:
+        return { value: this.fiboSecond, done: !(this.max >= this.count) };
+
+      default:
+        return { value: nextFiboNumber, done: !(this.max >= this.count) };
+    }
   }
 };
 
