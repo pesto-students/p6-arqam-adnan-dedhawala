@@ -10,10 +10,14 @@ const getRickandMortyCharacter = pageNumber => {
 
 const asyncAwaitTask = async () => {
   let counter = 1;
-  while (counter <= 3) {
-    let characters = await getRickandMortyCharacter(counter);
-    console.log("async await", characters);
-    counter++;
+  try {
+    while (counter <= 3) {
+      let characters = await getRickandMortyCharacter(counter);
+      console.log("async await", characters);
+      counter++;
+    }
+  } catch (error) {
+    console.log(error);
   }
 };
 
