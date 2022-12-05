@@ -35,7 +35,6 @@ class LinkedList {
       this.head = this.head.next;
       num--;
     }
-
   };
 
   printValues = () => {
@@ -58,4 +57,4 @@ valueArr.forEach(val => {
 
 linkedList.rotateLinkedList(2);
 
-linkedList.printValues()
+linkedList.printValues();
