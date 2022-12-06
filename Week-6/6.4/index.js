@@ -11,3 +11,4 @@ const getMaxProfit = arr => {
 };
 
 console.log(getMaxProfit([7, 6, 4, 3, 1]));
+console.log(getMaxProfit([7, 1, 5, 3, 6, 4]));

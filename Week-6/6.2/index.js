@@ -20,26 +20,17 @@ const getSpiralOrder = arr => {
 
   let arrDirection = direction.RIGHT;
 
+  let directionOpsMap = {
+    [direction.RIGHT]: () => currentLength++,
+    [direction.LEFT]: () => currentLength--,
+    [direction.DOWN]: () => currentHeight++,
+    [direction.UP]: () => currentHeight--
+  };
+
   while (spiralArr.length < spiralArrLength) {
     spiralArr.push(arr[currentHeight][currentLength]);
 
-    switch (arrDirection) {
-      case direction.RIGHT:
-        currentLength++;
-        break;
-      case direction.LEFT:
-        currentLength--;
-        break;
-      case direction.DOWN:
-        currentHeight++;
-        break;
-      case direction.UP:
-        currentHeight--;
-        break;
-
-      default:
-        break;
-    }
+    directionOpsMap[arrDirection]();
 
     if (currentLength === maxLength && arrDirection === direction.RIGHT) {
       arrDirection = direction.DOWN;
@@ -62,9 +53,15 @@ const getSpiralOrder = arr => {
   return spiralArr;
 };
 
-let finalarr = getSpiralOrder([
+let finalarr1 = getSpiralOrder([
   [1, 2, 3, 4, 5],
   [6, 7, 8, 9, 10]
 ]);
 
-console.log("resultarr", finalarr);
+let finalarr2 = getSpiralOrder([
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]);
+console.log("resultarr", finalarr1);
+console.log("resultarr", finalarr2);

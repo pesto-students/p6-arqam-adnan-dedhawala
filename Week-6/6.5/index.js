@@ -18,4 +18,6 @@ const getPairDifference = (arr, diffValue) => {
   return hasPair ? 1 : 0;
 };
 
-console.log(getPairDifference([-10, 20], 30));
+// console.log(getPairDifference([-10, 20], 30));
+// console.log(getPairDifference([5, 10, 3, 2, 50, 80], 78));
+console.log(getPairDifference([5, 10, [2, 80, 3]], 78));
