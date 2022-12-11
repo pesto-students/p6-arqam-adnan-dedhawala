@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Header } from "./components/header";
 import { ListItem } from "./components/listItem";
 import { TodoForm } from "./components/todoForm";
-import { findIndex } from "lodash";
-import { todoStatus } from "./utils";
+import  findIndex  from "lodash/findIndex";
 
 function App() {
   const [todoList, setTodoList] = useState([]);

@@ -1,7 +1,6 @@
 import { todoStatus } from "../utils";
 import {
   AiOutlineCheckCircle,
-  AiOutlineEdit,
   AiOutlineDelete,
   AiOutlineCloseCircle
 } from "react-icons/ai";
@@ -17,7 +16,6 @@ export const ListItem = ({ title, status, id, markItemStatus, deleteItem }) => {
   const handleDelete = () => {
     deleteItem(id);
   };
-  // const handleEdit = () => { };
   return (
     <div className="bg-white p-4 mb-2 rounded flex items-center">
       <p className={doneClassName + "overflow-hidden break-all text-lg flex-1"}>
@@ -39,7 +37,6 @@ export const ListItem = ({ title, status, id, markItemStatus, deleteItem }) => {
           onClick={handleDelete}
           className="mr-2 hover:text-red-600"
         />
-        {/* <AiOutlineEdit onClick={handleEdit} className=" hover:text-slate-600" /> */}
       </div>
     </div>
   );
