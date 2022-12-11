@@ -37,15 +37,35 @@ const getMaximumDepthBT = arr => {
           1 +
           Math.max(getDepth(nodeMap, temp.left), getDepth(nodeMap, temp.right));
       } else if (temp.left !== null) {
-        temp.depth =1+getDepth(nodeMap, temp.left)
+        temp.depth = 1 + getDepth(nodeMap, temp.left);
       } else {
-        temp.depth =1+getDepth(nodeMap, temp.right)
+        temp.depth = 1 + getDepth(nodeMap, temp.right);
       }
     }
-    nodeMap.set(nodeArr[i],temp)
+    nodeMap.set(nodeArr[i], temp);
   }
 
-  console.log(getDepth(nodeMap,arr[0]))
+  console.log(getDepth(nodeMap, arr[0]));
 };
 
-getMaximumDepthBT([1,2,3,4,5,7,8,null,null,null,null,10,9,null,null,null,null,11,12]);
+getMaximumDepthBT([
+  1,
+  2,
+  3,
+  4,
+  5,
+  7,
+  8,
+  null,
+  null,
+  null,
+  null,
+  10,
+  9,
+  null,
+  null,
+  null,
+  null,
+  11,
+  12
+]);
