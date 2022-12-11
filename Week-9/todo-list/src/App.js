@@ -14,25 +14,30 @@ function App() {
     setTodoList([...todoList, todo]);
   };
 
-  const markItemStatus = (key,status) => {
+  const markItemStatus = (key, status) => {
     let tempList = [...todoList];
-    let index = findIndex(tempList,{id:key});
+    let index = findIndex(tempList, { id: key });
     tempList[index].status = status;
-    setTodoList(tempList)
+    setTodoList(tempList);
   };
 
-  const deleteItem = (key) => {
-    let tempList = [...todoList].filter(val=>val.id !== key);
-    setTodoList(tempList)
+  const deleteItem = key => {
+    let tempList = [...todoList].filter(val => val.id !== key);
+    setTodoList(tempList);
   };
-  
+
   return (
     <div className="min-h-screen bg-orange-100 flex flex-col p-8">
       <Header />
       <TodoForm addTodo={addTodo} />
       <div className="w-full flex flex-col mt-8">
         {todoList.map((value, index) => (
-          <ListItem {...value} key={index} markItemStatus={markItemStatus} deleteItem={deleteItem} />
+          <ListItem
+            {...value}
+            key={index}
+            markItemStatus={markItemStatus}
+            deleteItem={deleteItem}
+          />
         ))}
       </div>
     </div>
