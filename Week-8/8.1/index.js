@@ -1,51 +1,18 @@
-const setNode = (depth, left, right) => ({
-  depth,
-  left,
-  right
-});
+const { createTree } = require("../utils/index.js");
 
-const getDepth = (map, key) => {
-  return map.get(key).depth;
-};
+const calculateHeight = root => {
+  if (root === null) return 0;
 
-const getNodeMap = arr => {
-  let treeObj = new Map();
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i]) {
-      let leftIndex = 2 * i + 1;
-      let rightIndex = 2 * i + 2;
-      let leftValue = arr[leftIndex] ? arr[leftIndex] : null;
-      let rightValue = arr[rightIndex] ? arr[rightIndex] : null;
-      let newNode = setNode(0, leftValue, rightValue);
-      treeObj.set(arr[i], newNode);
-    }
-  }
-  return treeObj;
+  let leftHeight = calculateHeight(root.left);
+  let rightHeight = calculateHeight(root.right);
+
+  return Math.max(leftHeight + 1, rightHeight + 1);
 };
 
 const getMaximumDepthBT = arr => {
-  let nodeMap = getNodeMap(arr);
-  let nodeArr = [...nodeMap.keys()];
-  for (let i = nodeArr.length - 1; i >= 0; i--) {
-    let temp = nodeMap.get(nodeArr[i]);
+  let root = createTree(arr);
 
-    if (temp.left === null && temp.right === null) {
-      temp.depth = 1;
-    } else {
-      if (temp.left !== null && temp.right !== null) {
-        temp.depth =
-          1 +
-          Math.max(getDepth(nodeMap, temp.left), getDepth(nodeMap, temp.right));
-      } else if (temp.left !== null) {
-        temp.depth = 1 + getDepth(nodeMap, temp.left);
-      } else {
-        temp.depth = 1 + getDepth(nodeMap, temp.right);
-      }
-    }
-    nodeMap.set(nodeArr[i], temp);
-  }
-
-  console.log(getDepth(nodeMap, arr[0]));
+  console.log(calculateHeight(root));
 };
 
 getMaximumDepthBT([
@@ -69,3 +36,6 @@ getMaximumDepthBT([
   11,
   12
 ]);
+
+getMaximumDepthBT([3, 9, 20, null, null, 15, 7]);
+getMaximumDepthBT([1, null, 2]);
