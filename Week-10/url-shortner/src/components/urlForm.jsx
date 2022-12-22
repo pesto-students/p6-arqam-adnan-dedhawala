@@ -21,8 +21,8 @@ export const UrlForm = ({ getShortLinkUrl }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    getShortLinkUrl(url,()=>{
-      setUrl("")
+    getShortLinkUrl(url, () => {
+      setUrl("");
     });
   };
 

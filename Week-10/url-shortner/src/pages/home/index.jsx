@@ -8,12 +8,12 @@ export const Home = () => {
   const [shortUrlList, setShortUrlList] = useState([]);
 
   const getShortLinkUrl = async (url, onSuccess) => {
-    getShortUrlService(url).then(result=>{
-      setShortUrlList([...shortUrlList,result.result])
-      if(onSuccess){
-        onSuccess()
+    getShortUrlService(url).then(result => {
+      setShortUrlList([...shortUrlList, result.result]);
+      if (onSuccess) {
+        onSuccess();
       }
-    })
+    });
   };
 
   return (
@@ -30,11 +30,11 @@ export const Home = () => {
           <UrlForm getShortLinkUrl={getShortLinkUrl} />
         </Card>
         <div className="mt-8">
-        {shortUrlList.map(val => (
-          <Card className="mb-2" key={val.code}>
-            <p>listItem</p>
-          </Card>
-        ))}
+          {shortUrlList.map(val => (
+            <Card className="mb-2" key={val.code}>
+              <p>listItem</p>
+            </Card>
+          ))}
         </div>
       </div>
     </CommonLayout>
